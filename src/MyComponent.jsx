@@ -1,57 +1,28 @@
 import {useState} from 'react';
 
 function MyComponent() {
-    const [name, setName] = useState("Guest");
-    const [age, setAge] = useState(0);
-    const [isEmployed, setIsEmployed] = useState(false);
-    const [gender, setGender] = useState("male");
-    const [isMarried, setIsMarried] = useState(false);
+    const [car, setCar] = useState({
+        brand: "Ford",
+        model: "Mustang",
+        year: 1964
+    });
+    const updateYear = (e) => {
+        setCar(car => ({...car, year: e.target.value}));
+    }
+    const updateBrand = (e) => {
+        setCar(car => ({...car, brand: e.target.value}));
+    }   
+    const updateModel = (e) => {
+        setCar(car => ({...car, model: e.target.value}) );
+    }
     return (
+
         <>
-            <div>
-                <h1>{name}</h1>
-                <input type="text" onChange={(e) => setName(e.target.value)} />
-            </div>
-            <div>
-                <h1>{age}</h1>
-                <button onClick={() => setAge(age + 1)}>Increase Age</button>
-                <button onClick={() => setAge(age - 1)}>Decrease Age</button>
-            </div>
-            <div>
-                <h1>{isEmployed ? "Employed" : "Unemployed"}</h1>
-                <button onClick={() => setIsEmployed(!isEmployed)}>Change Employment Status</button>
-            </div>
-            <div>
-                <h1>{gender}</h1>
-                <select onChange={(e) => setGender(e.target.value)}>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <div>
-                <h1>{isMarried ? "Married" : "Single"}</h1>
-                <label>
-                    <input 
-                        type="radio" 
-                        checked={isMarried} 
-                        onChange={() => setIsMarried(true)} 
-                        value="married" 
-                    />
-                    Married
-                </label>
-                <label>
-                    <input 
-                        type="radio" 
-                        checked={!isMarried} 
-                        onChange={() => setIsMarried(false)} 
-                        value="single" 
-                    />
-                    Single
-                </label>
-            </div>
+           <p>Your favorite car is {car.brand} {car.model} {car.year}</p>
+            <input type="number" value={car.year} onChange={updateYear} /><br />
+            <input type="text" value={car.brand} onChange={updateBrand} /><br />
+            <input type="text" value={car.model} onChange={updateModel} /><br />
         </>
-        
-        
     );
 }
 

@@ -1,0 +1,70 @@
+.food-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2, h4 {
+    color: #333;
+}
+
+.food-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.food-name {
+    flex: 2;
+}
+
+.food-quantity,
+.food-calories {
+    flex: 1;
+    text-align: center;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.edit-btn {
+    color: #2196F3;
+}
+
+.delete-btn {
+    color: #f44336;
+}
+
+.food-input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.add-btn {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+}
