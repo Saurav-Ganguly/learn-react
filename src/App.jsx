@@ -11,6 +11,12 @@ import Counter from "./Counter.jsx";
 import ColorPicker from "./ColorPicker.jsx";
 import FoodList from "./FoodList.jsx";
 import Todo from "./todo.jsx";
+import MyEffect from "./myEffect.jsx";
+import Size from "./Size.jsx";
+import DigitalClock from "./digitalClock.jsx";
+import ComponentA from "./components/ComponentA.jsx";
+import MyRef from "./myRef.jsx";
+import StopWatch from "./stopWatch.jsx";
 function App() {
   const fruits = [
     {id :  1, name: 'apple', quantity: 10, calories: 95},  
@@ -22,9 +28,7 @@ function App() {
     {id: 2, name: 'broccoli', quantity: 5, calories: 34}
   ];
   return (
-    <>
-      <Todo />
-    </>
+      <StopWatch />
   );
 }
 
